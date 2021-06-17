@@ -11,22 +11,24 @@ class Band:
 
 
 class Musician:
-    pass
-
-
-class Guitarist:
     def __init__(self, name):
         self.name = name
 
     def __str__(self):
-        return f"My name is {self.name} and I play guitar"
+        return f"My name is {self.name} and I play {self.instrument}"
 
     def __repr__(self):
-        return f"Guitarist instance. Name = {self.name}"
+        return f"{self.role} instance. Name = {self.name}"
 
-    @staticmethod
-    def get_instrument():
-        return "guitar"
+    def get_instrument(self):
+        return f"{self.instrument}"
+
+
+class Guitarist(Musician):
+    def __init__(self, name):
+        self.name = name
+        self.instrument = "guitar"
+        self.role = "Guitarist"
 
     @staticmethod
     def play_solo():
