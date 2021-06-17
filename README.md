@@ -2,7 +2,7 @@
 
 ## Links & Resourdes
 
-- [Lab 4 Pull Request]()
+- [Pull Request 1](https://github.com/daveeS987/pythonic-garage-band/pull/1)
 
 ## Overview
 
