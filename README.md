@@ -2,7 +2,7 @@
 
 ## Links & Resourdes
 
-- [Pull Request 1](https://github.com/daveeS987/pythonic-garage-band/pull/1)
+- [Pull Request](https://github.com/daveeS987/pythonic-garage-band/pull/2)
 
 ## Overview
 
