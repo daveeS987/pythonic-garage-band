@@ -11,9 +11,6 @@ class Band:
 
 
 class Musician:
-    def __init__(self, name):
-        self.name = name
-
     def __str__(self):
         return f"My name is {self.name} and I play {self.instrument}"
 
@@ -35,38 +32,22 @@ class Guitarist(Musician):
         return "face melting guitar solo"
 
 
-class Bassist:
+class Bassist(Musician):
     def __init__(self, name):
         self.name = name
-
-    def __str__(self):
-        return f"My name is {self.name} and I play bass"
-
-    def __repr__(self):
-        return f"Bassist instance. Name = {self.name}"
-
-    @staticmethod
-    def get_instrument():
-        return "bass"
+        self.instrument = "bass"
+        self.role = "Bassist"
 
     @staticmethod
     def play_solo():
         return "bom bom buh bom"
 
 
-class Drummer:
+class Drummer(Musician):
     def __init__(self, name):
         self.name = name
-
-    def __str__(self):
-        return f"My name is {self.name} and I play drums"
-
-    def __repr__(self):
-        return f"Drummer instance. Name = {self.name}"
-
-    @staticmethod
-    def get_instrument():
-        return "drums"
+        self.instrument = "drums"
+        self.role = "Drummer"
 
     @staticmethod
     def play_solo():
