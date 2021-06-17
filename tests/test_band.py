@@ -169,7 +169,6 @@ def clean():
     There's also a more advanced way to run code after each test as well
     Check the docs for that. Hint: it uses yield
     """
-    yield
     Band.instances = []
 
 

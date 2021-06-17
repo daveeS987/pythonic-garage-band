@@ -1,11 +1,11 @@
 class Band:
 
-    band_names = []
+    instances = []
 
     def __init__(self, name, members=None):
         self.name = name
         self.members = members
-        Band.band_names.append(name)
+        Band.instances.append(name)
 
     def __str__(self):
         return f"The band {self.name}"
@@ -24,7 +24,7 @@ class Band:
 
     @classmethod
     def to_list(cls):
-        return cls.band_names
+        return cls.instances
 
 
 class Musician:
@@ -73,5 +73,6 @@ class Drummer(Musician):
 
 if __name__ == "__main__":
 
+    print(Band.to_list() == [])
     Band("The Nobodies", [])
-    print(Band.to_list())
+    print(len(Band.to_list()) == 1)
