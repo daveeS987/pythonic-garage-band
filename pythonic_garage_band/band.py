@@ -73,6 +73,7 @@ class Drummer(Musician):
 
 if __name__ == "__main__":
 
+    # Just trying to test the last test case here
     print(Band.to_list() == [])
     Band("The Nobodies", [])
     print(len(Band.to_list()) == 1)
