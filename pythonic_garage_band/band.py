@@ -1,13 +1,30 @@
 class Band:
+
+    band_names = []
+
     def __init__(self, name, members=None):
         self.name = name
         self.members = members
+        Band.band_names.append(name)
 
     def __str__(self):
         return f"The band {self.name}"
 
     def __repr__(self):
         return f"Band instance. name={self.name}, members={self.members}"
+
+    def play_solos(self):
+        # why does this return line not work????
+        # return map(lambda instance: instance.play_solo, self.members)
+
+        solos_list = []
+        for instant in self.members:
+            solos_list.append(instant.play_solo())
+        return solos_list
+
+    @classmethod
+    def to_list(cls):
+        return cls.band_names
 
 
 class Musician:
@@ -52,3 +69,9 @@ class Drummer(Musician):
     @staticmethod
     def play_solo():
         return "rattle boom crash"
+
+
+if __name__ == "__main__":
+
+    Band("The Nobodies", [])
+    print(Band.to_list())

@@ -102,7 +102,6 @@ def test_individual_solos(one_band):
             assert member.play_solo() == "rattle boom crash"
 
 
-# @pytest.mark.skip("stretch")
 def test_band_members(one_band):
 
     assert len(one_band.members) == 3
@@ -120,7 +119,6 @@ def test_band_members(one_band):
     assert one_band.members[2].name == "Dave Grohl"
 
 
-@pytest.mark.skip("pending")
 def test_play_solos_for_whole_band(one_band):
     solos = one_band.play_solos()
     assert len(solos) == 3
@@ -129,7 +127,6 @@ def test_play_solos_for_whole_band(one_band):
     assert solos[2] == "rattle boom crash"
 
 
-@pytest.mark.skip("pending")
 def test_to_list():
     assert Band.to_list() == []
     Band("The Nobodies", [])
@@ -172,6 +169,7 @@ def clean():
     There's also a more advanced way to run code after each test as well
     Check the docs for that. Hint: it uses yield
     """
+    yield
     Band.instances = []
 
 
