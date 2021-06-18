@@ -16,6 +16,8 @@ class Band:
     def play_solos(self):
         # why does this return line not work????
         # return map(lambda instance: instance.play_solo(), self.members)
+        # try this code next time
+        # return [member.play_solo() for member in self.members]
 
         solos_list = []
         for instant in self.members:
