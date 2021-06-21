@@ -14,9 +14,6 @@ class Band:
         return f"Band instance. name={self.name}, members={self.members}"
 
     def play_solos(self):
-        # why does this return line not work????
-        # return map(lambda instance: instance.play_solo(), self.members)
-        # try this code next time
         # return [member.play_solo() for member in self.members]
 
         solos_list = []
@@ -30,6 +27,12 @@ class Band:
 
 
 class Musician:
+    def __init__(self, name, instrument, role, solo):
+        self.name = name
+        self.instrument = instrument
+        self.role = role
+        self.solo = solo
+
     def __str__(self):
         return f"My name is {self.name} and I play {self.instrument}"
 
@@ -39,43 +42,29 @@ class Musician:
     def get_instrument(self):
         return f"{self.instrument}"
 
+    def play_solo(self):
+        return f"{self.solo}"
+
 
 class Guitarist(Musician):
     def __init__(self, name):
-        self.name = name
-        self.instrument = "guitar"
-        self.role = "Guitarist"
-
-    @staticmethod
-    def play_solo():
-        return "face melting guitar solo"
+        super().__init__(name, "guitar", "Guitarist", "face melting guitar solo")
 
 
 class Bassist(Musician):
     def __init__(self, name):
-        self.name = name
-        self.instrument = "bass"
-        self.role = "Bassist"
-
-    @staticmethod
-    def play_solo():
-        return "bom bom buh bom"
+        super().__init__(name, "bass", "Bassist", "bom bom buh bom")
 
 
 class Drummer(Musician):
     def __init__(self, name):
-        self.name = name
-        self.instrument = "drums"
-        self.role = "Drummer"
-
-    @staticmethod
-    def play_solo():
-        return "rattle boom crash"
+        super().__init__(name, "drums", "Drummer", "rattle boom crash")
 
 
 if __name__ == "__main__":
+    pass
 
     # Just trying to test the last test case here
-    print(Band.to_list() == [])
-    Band("The Nobodies", [])
-    print(len(Band.to_list()) == 1)
+    # print(Band.to_list() == [])
+    # Band("The Nobodies", [])
+    # print(len(Band.to_list()) == 1)
